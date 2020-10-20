@@ -1,0 +1,5 @@
+node_modules
+*.oldjs
+*.ts_old
+*.code-workspace
+.env

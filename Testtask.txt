@@ -1,0 +1,114 @@
+Используя минимум 2 библиотеки type-graphql и typeorm:
+1) Создать мутации на создание книги и автора в базе.
+2) Реализовать запрос на получение списка книг с авторами. Важно ограничиться двумя запросами к базе за один graphql запрос. Для author использовать fieldResolver.
+3) Тесты:
+-Создание автора
+-Создание книги
+-Получение книг без авторов
+-Получение книг с авторамиТипы graphql схемы:
+
+type Book {
+	bookId: number;
+	name: string;
+	pageCount: number;
+	authorId: number;
+	author: Author;
+}
+
+type Author {
+	authorId: number;
+	name: string;
+}
+
+Пример запроса к graphql:
+
+query {
+	books() {
+		name
+		author {
+			name
+		}
+	}
+}
+
+-----------------------------
+
+mutation {
+  createBook(input: {
+    name: "C++ For Beginners",
+    pageCount:340,
+    authorId:1,
+  }) {
+     
+    bookId
+  }
+}
+
+
+mutation {
+  createAuthor(input: {
+    name: "Bjoirne",
+  }) {
+    authorId
+  }
+}
+
+mutation {
+  createBook(input: {
+  		name:"onetest",
+    pageCount: 356,
+    authorId: 1,
+    author: "user1"
+  }) {
+    bookId
+  }
+}
+
+mutation {
+  createAuthor(input: {
+    name: "Bjoirne",
+  }) {
+    name
+  } 
+}
+
+{
+  getAllBooks(bookId:0) {
+    name
+    pageCount
+    authorId
+    author
+  }
+}
+
+
+{
+  getBook (bookId: 1)
+  
+
+}
+
+----------
+mutation {
+  createAuthor(input: {
+    name: "Bjoirne2",
+  }) {
+    authorId
+  }
+}
+
+-> authorId: "b6186d72b5956f31147c"
+
+mutation {
+  createBook(input: {
+    name: "C++ For Beginners",
+    pageCount:340,
+    authorId:"b6186d72b5956f31147c",
+  }) {
+     
+    bookId
+  }
+}
+
+-> "bookId": "4d0d407512325b4c80c6"
+-------------------
