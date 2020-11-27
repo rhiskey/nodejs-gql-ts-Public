@@ -1,4 +1,5 @@
-![GitHub language count](https://img.shields.io/github/languages/count/rhiskey/nodejs-gql-ts-Public)
+![GitHub language count](https://img.shields.io/github/languages/count/rhiskey/nodejs-gql-ts-Public) ![Discord](https://img.shields.io/discord/224962875716796418) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rhiskey/nodejs-gql-ts-Public) ![GitHub](https://img.shields.io/github/license/rhiskey/nodejs-gql-ts-Public)
+![GitHub followers](https://img.shields.io/github/followers/rhiskey?label=Follow%20me&style=social)
 # nodejs-graphql
 <h1> A test case.</h1> </br>
 
