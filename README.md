@@ -1,3 +1,4 @@
+![GitHub language count](https://img.shields.io/github/languages/count/rhiskey/nodejs-gql-ts-Public)
 # nodejs-graphql
 <h1> A test case.</h1> </br>
 
